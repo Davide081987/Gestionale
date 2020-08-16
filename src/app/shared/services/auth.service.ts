@@ -8,10 +8,21 @@ import { of, Observable } from 'rxjs';
 })
 export class AuthService {
   admin = ADMIN;
+  authentication = false;
 
   constructor() {}
 
   getAdmin(): Observable<Admin> {
     return of(this.admin);
+  }
+
+  login() {
+    this.authentication = true;
+    console.log(this.authentication, 'authlogin');
+  }
+
+  logout() {
+    this.authentication = false;
+    console.log(this.authentication, 'authlogin');
   }
 }

@@ -1,6 +1,5 @@
-.containerForm {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+mat-card {
+  max-width: 200px;
+  margin: 4em auto;
+  text-align: center;
 }

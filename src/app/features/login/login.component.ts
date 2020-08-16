@@ -9,9 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
   admin: Admin;
-
-  userLog: string;
-  passwordLog: string;
+  username: string;
+  password: string;
 
   constructor(private auth: AuthService) {}
 
@@ -25,11 +24,11 @@ export class LoginComponent implements OnInit {
 
   onSubmit(): void {
     if (
-      this.admin.username === this.userLog &&
-      this.admin.password === this.passwordLog
+      this.admin.username === this.username &&
+      this.admin.password === this.password
     ) {
       alert(`benvenuto ${this.admin.username}`);
-      /* this.user[0].authentication = true;*/
+      this.auth.login();
     } else {
       alert('Nome Utente o Password Errati');
     }
