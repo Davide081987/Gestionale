@@ -9,17 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   constructor(public auth: AuthService) {}
 
-  ngOnInit(): void {
-    console.log(this.auth.authentication);
-  }
+  ngOnInit(): void {}
 
   login() {
     this.auth.login();
-    console.log(this.auth.authentication);
   }
 
   logout() {
     this.auth.logout();
-    console.log(this.auth.authentication);
   }
 }

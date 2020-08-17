@@ -11,6 +11,7 @@ import { LoginComponent } from './features/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { UsersComponent } from './features/users/users/users.component';
+import { UsersTableComponent } from './features/users/users-table/users-table.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UsersComponent } from './features/users/users/users.component';
     LoginComponent,
     NavbarComponent,
     UsersComponent,
+    UsersTableComponent,
   ],
   imports: [
     BrowserModule,
