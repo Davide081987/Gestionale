@@ -1,7 +1,7 @@
 <mat-toolbar color="primary" class="expanded-toolbar">
   <span>
     <button mat-button routerLink="/home">Gestionale</button>
-    <button *ngIf="this.auth.authentication" mat-button>Utenti</button>
+    <button *ngIf="this.auth.authentication" mat-button routerLink="/users">Utenti</button>
   </span>
   <div fxLayout="row" fxShow="false" fxShow.gt-sm>
     <div *ngIf="!this.auth.authentication">

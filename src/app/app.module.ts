@@ -1,3 +1,4 @@
+import { AuthService } from './shared/services/auth.service';
 import { MaterialModule } from './shared/material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -9,9 +10,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './features/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './features/navbar/navbar.component';
+import { UsersComponent } from './features/users/users/users.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, NavbarComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    NavbarComponent,
+    UsersComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,7 +28,7 @@ import { NavbarComponent } from './features/navbar/navbar.component';
     FormsModule,
     FlexLayoutModule,
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
