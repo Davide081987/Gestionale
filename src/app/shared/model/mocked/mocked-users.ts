@@ -1,4 +1,4 @@
-import { User } from '../interface/user';
+/*import { User } from '../interface/user';
 
 export const USERS: User[] = [
   {
@@ -30,7 +30,8 @@ export const USERS: User[] = [
     name: 'Giuseppe',
     email: 'Giuseppe@gmail.com',
     password: 'Giuseppe',
-    telephone: 7904356099 /*perchè se inizio il numero per 0 mi da errore*/,
+    telephone: 7904356099 /*perchè se inizio il numero per 0 mi da errore,
     referent: 'Giuseppe Verdi',
   },
 ];
+*/

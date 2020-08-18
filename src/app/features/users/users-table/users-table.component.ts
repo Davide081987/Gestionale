@@ -1,5 +1,4 @@
 import { User } from './../../../shared/model/interface/user';
-import { USERS } from './../../../shared/model/mocked/mocked-users';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -17,11 +16,11 @@ export class UsersTableComponent implements OnInit {
     console.log(this.users);
   }
 
-  deleteUser() {
+  deleteUser(): void {
     alert('utente eliminato');
   }
 
-  detailUser() {
+  detailUser(): void {
     alert('dettagli utente');
   }
 

@@ -1,4 +1,4 @@
-import { USERS } from './../../../shared/model/mocked/mocked-users';
+import { UserService } from './../service/user.service';
 import { User } from './../../../shared/model/interface/user';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./users.component.css'],
 })
 export class UsersComponent implements OnInit {
-  users = USERS;
+  users: User[];
 
-  constructor() {}
+  constructor(private userService: UserService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getUsers().subscribe((users) => (this.users = users));
+  }
 }

@@ -17,19 +17,19 @@ export class AuthService implements CanActivate {
     return of(this.admin);
   }
 
-  login() {
+  login(): void {
     this.authentication = true;
     console.log(this.authentication, 'authlogin');
     this.router.navigate(['users']);
   }
 
-  logout() {
+  logout(): void {
     this.authentication = false;
     console.log(this.authentication, 'authlogin');
     this.router.navigate(['home']);
   }
 
-  canActivate() {
+  canActivate(): boolean {
     if (this.authentication) {
       return true;
     } else {

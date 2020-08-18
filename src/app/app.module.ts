@@ -1,3 +1,4 @@
+import { InMemoryDataService } from './shared/services/in-memory-data.service';
 import { AuthService } from './shared/services/auth.service';
 import { MaterialModule } from './shared/material/material.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { NavbarComponent } from './features/navbar/navbar.component';
 import { UsersComponent } from './features/users/users/users.component';
 import { UsersTableComponent } from './features/users/users-table/users-table.component';
+import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,13 @@ import { UsersTableComponent } from './features/users/users-table/users-table.co
     MaterialModule,
     FormsModule,
     FlexLayoutModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+      delay: 500,
+    }),
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
