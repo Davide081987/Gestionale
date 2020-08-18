@@ -1,20 +1,23 @@
 import { Admin } from './../model/interface/admin';
-import { ADMIN } from './../model/mocked/mocked-admin';
+//import { ADMIN } from './../model/mocked/mocked-admin';
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { Router, CanActivate } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService implements CanActivate {
-  admin = ADMIN;
+  private url = 'api/admin';
+
+  //admin = ADMIN;
   authentication = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private httpClient: HttpClient) {}
 
   getAdmin(): Observable<Admin> {
-    return of(this.admin);
+    return this.httpClient.get<Admin>(this.url);
   }
 
   login(): void {

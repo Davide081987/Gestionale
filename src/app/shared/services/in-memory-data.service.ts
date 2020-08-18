@@ -1,3 +1,4 @@
+import { Admin } from './../model/interface/admin';
 import { User } from './../model/interface/user';
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
@@ -8,7 +9,7 @@ import { InMemoryDbService } from 'angular-in-memory-web-api';
 export class InMemoryDataService implements InMemoryDbService {
   constructor() {}
 
-  createDb(): { users: User[] } {
+  createDb(): { users: User[]; admin: Admin } {
     const users: User[] = [
       {
         id: 1,
@@ -44,6 +45,12 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
 
-    return { users };
+    const admin: Admin = {
+      id: 1,
+      username: 'user',
+      password: 'password',
+    };
+
+    return { users, admin };
   }
 }

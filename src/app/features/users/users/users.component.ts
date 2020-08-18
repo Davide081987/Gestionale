@@ -15,4 +15,12 @@ export class UsersComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users) => (this.users = users));
   }
+
+  deleteUser() {
+    alert('utente eliminato padre');
+  }
+
+  detailUser() {
+    alert('dettagli utente padre');
+  }
 }

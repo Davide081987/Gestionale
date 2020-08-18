@@ -1,5 +1,5 @@
 import { User } from './../../../shared/model/interface/user';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-users-table',
@@ -8,6 +8,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UsersTableComponent implements OnInit {
   @Input() users: User;
+  @Output() deleteUser = new EventEmitter();
+  @Output() detailUser = new EventEmitter();
 
   constructor() {}
 
@@ -16,12 +18,12 @@ export class UsersTableComponent implements OnInit {
     console.log(this.users);
   }
 
-  deleteUser(): void {
-    alert('utente eliminato');
+  userDelete(): void {
+    this.deleteUser.emit();
   }
 
-  detailUser(): void {
-    alert('dettagli utente');
+  userDetail(): void {
+    this.detailUser.emit();
   }
 
   displayedColumns: string[] = ['id', 'name', 'email', 'delete', 'details'];
