@@ -10,7 +10,6 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  user;
 
   constructor(private userService: UserService) {}
 
@@ -19,10 +18,13 @@ export class UsersComponent implements OnInit {
   }
 
   deleteUser(user: User): void {
+    this.users = this.users.filter((userDelete) => userDelete !== user);
+    this.userService.deleteUser(user).subscribe();
     alert('utente eliminato padre');
   }
 
   detailUser(user: User): void {
+    console.log('detail parent ', user);
     alert('dettagli utente padre');
   }
 }

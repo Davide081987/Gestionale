@@ -8,15 +8,12 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class UsersTableComponent implements OnInit {
   @Input() users: User;
-  @Output() deleteUser = new EventEmitter();
-  @Output() detailUser = new EventEmitter();
+  @Output() deleteUser = new EventEmitter<User>();
+  @Output() detailUser = new EventEmitter<User>();
 
   constructor() {}
 
-  ngOnInit(): void {
-    this.users;
-    console.log(this.users);
-  }
+  ngOnInit(): void {}
 
   userDelete(user: User): void {
     this.deleteUser.emit(user);
