@@ -1,6 +1,7 @@
 import { UserService } from './../service/user.service';
 import { User } from './../../../shared/model/interface/user';
 import { Component, OnInit } from '@angular/core';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-users',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsersComponent implements OnInit {
   users: User[];
+  user;
 
   constructor(private userService: UserService) {}
 
@@ -16,11 +18,11 @@ export class UsersComponent implements OnInit {
     this.userService.getUsers().subscribe((users) => (this.users = users));
   }
 
-  deleteUser() {
+  deleteUser(user: User): void {
     alert('utente eliminato padre');
   }
 
-  detailUser() {
+  detailUser(user: User): void {
     alert('dettagli utente padre');
   }
 }

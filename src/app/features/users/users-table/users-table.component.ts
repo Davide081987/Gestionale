@@ -18,12 +18,12 @@ export class UsersTableComponent implements OnInit {
     console.log(this.users);
   }
 
-  userDelete(): void {
-    this.deleteUser.emit();
+  userDelete(user: User): void {
+    this.deleteUser.emit(user);
   }
 
-  userDetail(): void {
-    this.detailUser.emit();
+  userDetail(user: User): void {
+    this.detailUser.emit(user);
   }
 
   displayedColumns: string[] = ['id', 'name', 'email', 'delete', 'details'];
