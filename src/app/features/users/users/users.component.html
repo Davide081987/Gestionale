@@ -1,9 +1,9 @@
-<button (click)="addUser()" mat-icon-button color="primary" class="addButton">
+<button (click)="addFormCleaner()" mat-icon-button color="primary" class="addButton">
   <mat-icon>add_circle</mat-icon>
 </button>
 
 <div fxLayout="row">
   <app-users-table [users]="users" (deleteUser)="deleteUser($event)" (detailUser)="detailUser($event)">
   </app-users-table>
-  <app-user-form [user]="user"></app-user-form>
+  <app-user-form [user]="user" (updateUser)="updateUser($event)" (addUser)="addUser($event)"></app-user-form>
 </div>

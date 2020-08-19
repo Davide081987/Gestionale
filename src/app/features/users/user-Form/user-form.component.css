@@ -2,3 +2,20 @@ div {
   width: 100%;
   margin: 15px;
 }
+
+table {
+  margin: 15px
+}
+
+.buttonClose {
+  display: flex;
+  justify-content: end;
+}
+
+mat-form-field {
+  margin: 10px;
+}
+
+.actionButton {
+  margin: 15px;
+}

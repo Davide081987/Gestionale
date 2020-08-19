@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { User } from './../../../shared/model/interface/user';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./users-table.component.css'],
 })
 export class UsersTableComponent implements OnInit {
-  @Input() users: User;
+  @Input() users: Observable<User[]>;
   @Output() deleteUser = new EventEmitter<User>();
   @Output() detailUser = new EventEmitter<User>();
 

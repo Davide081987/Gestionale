@@ -1,6 +1,6 @@
+import { User } from './../../../shared/model/interface/user';
 import { Observable } from 'rxjs';
-import { User } from '../../../shared/model/interface/user';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-user-form',
@@ -9,6 +9,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserFormComponent implements OnInit {
   @Input() user: Observable<User>;
+  @Output() updateUser = new EventEmitter<User>();
+  @Output() addUser = new EventEmitter<User>();
 
   empty: Observable<User>;
 
@@ -18,5 +20,13 @@ export class UserFormComponent implements OnInit {
 
   close(): void {
     this.user = this.empty;
+  }
+
+  userUpdate(user: User): void {
+    this.updateUser.emit(user);
+  }
+
+  userAdd(user: User): void {
+    this.addUser.emit(user);
   }
 }

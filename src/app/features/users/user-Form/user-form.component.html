@@ -1,23 +1,40 @@
 <div *ngIf="user" class="mat-elevation-z8">
-  <p>
-    Name:{{user.name}}
-  </p>
-  <p>
-    email:{{user.email}}
-  </p>
-  <p>
-    password:{{user.password}}
-  </p>
-  <p>
-    tel:{{user.telephone}}
-  </p>
-  <p>
-    referent:{{user.referent}}
-  </p>
 
-
-  <button (click)="close()" mat-icon-button color="warn">
-    <mat-icon>cancel</mat-icon>
-  </button>
+  <form class="example-form">
+    <table>
+      <div class="buttonClose">
+        <button (click)="close()" mat-icon-button color="warn">
+          <mat-icon>cancel</mat-icon>
+        </button>
+      </div>
+      <tr>
+        <mat-form-field>
+          <input matInput placeholder="Username" [(ngModel)]=user.name name="username">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="email" [(ngModel)]=user.email type="email" name="email">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput placeholder="Password" [(ngModel)]=user.password type="password" name="password">
+        </mat-form-field>
+      </tr>
+      <tr>
+        <mat-form-field>
+          <input matInput placeholder="Referent" [(ngModel)]=user.referent name="referent">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput placeholder="Telephone" [(ngModel)]=user.telephone name="telephone">
+        </mat-form-field>
+      </tr>
+      <button mat-raised-button (click)="userUpdate(user)" color="primary" class="actionButton">
+        Update
+      </button>
+      <button mat-raised-button (click)="userAdd(user)" color="primary" class="actionButton">
+        Add
+      </button>
+    </table>
+  </form>
 
 </div>

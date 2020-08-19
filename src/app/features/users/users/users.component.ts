@@ -14,8 +14,7 @@ export class UsersComponent implements OnInit {
 
   user: User;
 
-  empty: User = {
-    id: 0,
+  empty: any = {
     name: '',
     email: '',
     password: '',
@@ -25,23 +24,28 @@ export class UsersComponent implements OnInit {
 
   constructor(private userService: UserService) {}
 
+  addFormCleaner(): void {
+    this.user = this.empty;
+  }
+
   ngOnInit(): void {
     this.userService.getUsers().subscribe((users) => (this.users = users));
+  }
+
+  addUser(user: User): void {
+    this.userService.addUser(user).subscribe();
+  }
+
+  detailUser(user: User): void {
+    this.user = user;
+  }
+
+  updateUser(user: User): void {
+    this.userService.updateUser(user).subscribe();
   }
 
   deleteUser(user: User): void {
     this.users = this.users.filter((userDelete) => userDelete !== user);
     this.userService.deleteUser(user).subscribe();
-    alert('utente eliminato padre');
-  }
-
-  detailUser(user: User): void {
-    this.user = user;
-    console.log('detail parent ', user);
-    alert('dettagli utente padre');
-  }
-
-  addUser(): void {
-    this.user = this.empty;
   }
 }
