@@ -15,6 +15,7 @@ import { UsersComponent } from './features/users/users/users.component';
 import { UsersTableComponent } from './features/users/users-table/users-table.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { UserFormComponent } from './features/users/user-Form/user-form.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
     NavbarComponent,
     UsersComponent,
     UsersTableComponent,
+    UserFormComponent,
   ],
   imports: [
     BrowserModule,

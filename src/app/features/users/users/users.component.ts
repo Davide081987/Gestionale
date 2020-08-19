@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { UserService } from './../service/user.service';
 import { User } from './../../../shared/model/interface/user';
 import { Component, OnInit } from '@angular/core';
@@ -10,6 +11,17 @@ import { identifierModuleUrl } from '@angular/compiler';
 })
 export class UsersComponent implements OnInit {
   users: User[];
+
+  user: User;
+
+  empty: User = {
+    id: 0,
+    name: '',
+    email: '',
+    password: '',
+    telephone: +'',
+    referent: '',
+  };
 
   constructor(private userService: UserService) {}
 
@@ -24,7 +36,12 @@ export class UsersComponent implements OnInit {
   }
 
   detailUser(user: User): void {
+    this.user = user;
     console.log('detail parent ', user);
     alert('dettagli utente padre');
+  }
+
+  addUser(): void {
+    this.user = this.empty;
   }
 }

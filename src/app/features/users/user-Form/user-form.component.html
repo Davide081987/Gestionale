@@ -1,0 +1,23 @@
+<div *ngIf="user" class="mat-elevation-z8">
+  <p>
+    Name:{{user.name}}
+  </p>
+  <p>
+    email:{{user.email}}
+  </p>
+  <p>
+    password:{{user.password}}
+  </p>
+  <p>
+    tel:{{user.telephone}}
+  </p>
+  <p>
+    referent:{{user.referent}}
+  </p>
+
+
+  <button (click)="close()" mat-icon-button color="warn">
+    <mat-icon>cancel</mat-icon>
+  </button>
+
+</div>

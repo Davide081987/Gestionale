@@ -1,0 +1,12 @@
+app-users-table {
+  width: 65%;
+}
+
+app-user-form {
+  width: 30%;
+}
+
+.addButton {
+  font-size: 45px;
+  margin: 10px;
+}
