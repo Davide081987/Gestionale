@@ -28,12 +28,17 @@ export class UsersComponent implements OnInit {
     this.user = this.empty;
   }
 
-  ngOnInit(): void {
+  getUsers(): void {
     this.userService.getUsers().subscribe((users) => (this.users = users));
+  }
+
+  ngOnInit(): void {
+    this.getUsers();
   }
 
   addUser(user: User): void {
     this.userService.addUser(user).subscribe();
+    this.getUsers();
   }
 
   detailUser(user: User): void {
@@ -42,6 +47,7 @@ export class UsersComponent implements OnInit {
 
   updateUser(user: User): void {
     this.userService.updateUser(user).subscribe();
+    this.getUsers();
   }
 
   deleteUser(user: User): void {

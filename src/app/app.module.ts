@@ -17,29 +17,33 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { UserFormComponent } from './features/users/user-Form/user-form.component';
 
+const components = [
+  AppComponent,
+  HomeComponent,
+  LoginComponent,
+  NavbarComponent,
+  UsersComponent,
+  UsersTableComponent,
+  UserFormComponent,
+];
+
+const modules = [
+  BrowserModule,
+  AppRoutingModule,
+  BrowserAnimationsModule,
+  MaterialModule,
+  FormsModule,
+  FlexLayoutModule,
+  HttpClientModule,
+  HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+    dataEncapsulation: false,
+    delay: 500,
+  }),
+];
+
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    LoginComponent,
-    NavbarComponent,
-    UsersComponent,
-    UsersTableComponent,
-    UserFormComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    FormsModule,
-    FlexLayoutModule,
-    HttpClientModule,
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false,
-      delay: 500,
-    }),
-  ],
+  declarations: [...components],
+  imports: [...modules],
   providers: [],
   bootstrap: [AppComponent],
 })

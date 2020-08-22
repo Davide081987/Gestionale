@@ -1,5 +1,4 @@
 import { Admin } from './../model/interface/admin';
-//import { ADMIN } from './../model/mocked/mocked-admin';
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { Router, CanActivate } from '@angular/router';
@@ -11,7 +10,6 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService implements CanActivate {
   private url = 'api/admin';
 
-  //admin = ADMIN;
   authentication = false;
 
   constructor(private router: Router, private httpClient: HttpClient) {}
