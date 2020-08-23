@@ -10,6 +10,12 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'users', component: UsersComponent, canActivate: [AuthService] },
+  {
+    path: 'lazy',
+    loadChildren: () =>
+      import('./featuresLazy/lazy/lazy.module').then((m) => m.LazyModule),
+    canActivate: [AuthService],
+  },
   { path: '**', component: HomeComponent },
 ];
 

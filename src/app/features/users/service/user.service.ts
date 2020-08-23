@@ -25,7 +25,7 @@ export class UserService {
 
   deleteUser(user: User): Observable<User> {
     alert('dato eliminato');
-    let id = user.id;
+    const id = user.id;
     return this.httpClient.delete<User>(`${this.url}/${id}`);
   }
 
